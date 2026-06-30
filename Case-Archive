@@ -1,103 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>CASE FILE ARCHIVE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Archive #117</title>
 
 <style>
+
 body{
     margin:0;
-    background:#05070a;
+    background:#06080c;
     color:#d7dde5;
     font-family:Courier New, monospace;
 }
 
+/* HEADER */
 header{
-    padding:20px;
-    border-bottom:1px solid #2b3a4a;
-    background:#0b1117;
+    background:#0d121a;
+    border-bottom:2px solid #2b3a4a;
+    padding:25px;
+    text-align:center;
 }
 
+header h1{
+    margin:0;
+    font-size:34px;
+    color:#e2e8f0;
+    letter-spacing:2px;
+}
+
+header p{
+    margin-top:8px;
+    color:#8aa0b5;
+    font-size:13px;
+}
+
+/* LAYOUT */
 .container{
-    max-width:900px;
+    max-width:1000px;
     margin:40px auto;
     padding:20px;
 }
 
+/* PANELS */
 .panel{
-    border:1px solid #2b3a4a;
     background:#0d141c;
+    border:1px solid #1f2a3a;
     padding:20px;
     margin-bottom:20px;
 }
 
 h2{
-    color:#69b7ff;
+    margin-top:0;
+    color:#b9c7d6;
+    font-size:18px;
 }
 
-a{
-    color:#7ab6ff;
-    text-decoration:none;
+/* TEXT */
+.log{
+    font-size:14px;
+    line-height:1.7;
+    color:#cfd8e3;
 }
 
-a:hover{
-    text-decoration:underline;
-}
-
-.red{
+.alert{
     color:#ff4d4d;
+    font-weight:bold;
 }
+
+/* BUTTON STYLE */
+button{
+    padding:12px 18px;
+    background:#2d6cdf;
+    border:none;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#4a86ff;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+/* FILE CARD */
+.card{
+    background:#0b1117;
+    border:1px solid #2b3a4a;
+    padding:15px;
+}
+
+.card h3{
+    margin-top:0;
+    color:#e2e8f0;
+    font-size:16px;
+}
+
+.small{
+    font-size:12px;
+    color:#8aa0b5;
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-CASE FILE ARCHIVE SYSTEM — ACCESS GRANTED
+<h1>CASE ARCHIVE #117</h1>
+<p>MULLET FEST INCIDENT DATABASE | HENPECKED JUNCTION MUNICIPAL RECORDS</p>
 </header>
 
 <div class="container">
 
+<!-- CASE STATUS -->
 <div class="panel">
 
-<h2>CASE FILE #117</h2>
+<h2>CASE STATUS</h2>
 
-<p>
-Status: ACTIVE INVESTIGATION<br>
-Authorization Code Accepted: <b>79243</b>
-</p>
+<div class="log">
+Status: <span class="alert">ACTIVE INVESTIGATION</span><br>
+Primary Event: Mullet Fest Public Disorder Series<br>
+Jurisdiction: Henpecked Junction Municipal Unit<br><br>
 
-<p>
-This case contains restricted investigative materials.
-All activity is monitored.
-</p>
+Summary:
+Multiple unresolved incident clusters detected during annual festival operations.
+</div>
 
 </div>
 
+<!-- INCIDENT FILES -->
+<div class="panel">
+
+<h2>INCIDENT FILES</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>INCIDENT 117-A</h3>
+<div class="small">Hot Dog Chomp Competition</div>
+<p>Event escalation beyond safe conduct limits. Multiple injuries reported from competitive enthusiasm.</p>
+</div>
+
+<div class="card">
+<h3>INCIDENT 117-B</h3>
+<div class="small">Vendor Conflict Zone</div>
+<p>Dispute between food vendors regarding fry station priority access.</p>
+</div>
+
+<div class="card">
+<h3>INCIDENT 117-C</h3>
+<div class="small">Portable Facility Vandalism</div>
+<p>Repeated damage to temporary sanitation units during peak festival hours.</p>
+</div>
+
+<div class="card">
+<h3>INCIDENT 117-D</h3>
+<div class="small">Mullet Competition Irregularities</div>
+<p>Suspected rule bending in “Mullet of the Year” judging process.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- PERSON OF INTEREST LINKS -->
+<div class="panel">
+
+<h2>PERSONS OF INTEREST</h2>
+
+<div class="log">
+
+SKEETER HOLLOWAY — Mechanical access to festival infrastructure<br>
+GRANDMA LOU — Unverified beverage distribution operations<br>
+OFFICER DAN RILEY — Internal documentation inconsistencies flagged<br>
+
+</div>
+
+</div>
+
+<!-- RETURN -->
 <div class="panel">
 
 <h2>NAVIGATION</h2>
 
-<p>
-<a href="suspects.html">→ Suspect Database</a><br><br>
-<a href="evidence1.html">→ Evidence Logs</a><br><br>
-<a href="locked-game.html">→ Classified File (LOCKED)</a>
-</p>
-
-</div>
-
-<div class="panel">
-
-<h2>CASE SUMMARY</h2>
-
-<p>
-An unresolved incident involving multiple persons of interest
-within a restricted rural jurisdiction. Evidence discrepancies
-remain under review.
-</p>
+<button onclick="goBack()">RETURN TO MAIN SYSTEM</button>
 
 </div>
 
 </div>
+
+<script>
+function goBack(){
+    window.location.href = "index.html";
+}
+</script>
 
 </body>
 </html>
