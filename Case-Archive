@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CASE FILE ARCHIVE</title>
+
+<style>
+body{
+    margin:0;
+    background:#05070a;
+    color:#d7dde5;
+    font-family:Courier New, monospace;
+}
+
+header{
+    padding:20px;
+    border-bottom:1px solid #2b3a4a;
+    background:#0b1117;
+}
+
+.container{
+    max-width:900px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.panel{
+    border:1px solid #2b3a4a;
+    background:#0d141c;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+h2{
+    color:#69b7ff;
+}
+
+a{
+    color:#7ab6ff;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+.red{
+    color:#ff4d4d;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+CASE FILE ARCHIVE SYSTEM — ACCESS GRANTED
+</header>
+
+<div class="container">
+
+<div class="panel">
+
+<h2>CASE FILE #117</h2>
+
+<p>
+Status: ACTIVE INVESTIGATION<br>
+Authorization Code Accepted: <b>79243</b>
+</p>
+
+<p>
+This case contains restricted investigative materials.
+All activity is monitored.
+</p>
+
+</div>
+
+<div class="panel">
+
+<h2>NAVIGATION</h2>
+
+<p>
+<a href="suspects.html">→ Suspect Database</a><br><br>
+<a href="evidence1.html">→ Evidence Logs</a><br><br>
+<a href="locked-game.html">→ Classified File (LOCKED)</a>
+</p>
+
+</div>
+
+<div class="panel">
+
+<h2>CASE SUMMARY</h2>
+
+<p>
+An unresolved incident involving multiple persons of interest
+within a restricted rural jurisdiction. Evidence discrepancies
+remain under review.
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
