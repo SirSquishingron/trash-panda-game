@@ -1,69 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mullet Fest Monitoring System</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#05070a;
+    color:#d7dde5;
+    font-family:Courier New, monospace;
+}
+
+/* CRT scanlines */
+body::before{
+    content:"";
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+    pointer-events:none;
+}
+
+/* HEADER */
+header{
+    padding:25px;
+    border-bottom:1px solid #263445;
+    background:#0b1117;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:42px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+header p{
+    margin-top:10px;
+    color:#8aa0b5;
+}
+
+/* MAIN CONTAINER */
+.container{
+    max-width:900px;
+    margin:40px auto;
+    padding:20px;
+}
+
+/* PANELS */
+.panel{
+    background:#0d141c;
+    border:1px solid #2b3a4a;
+    padding:25px;
+    margin-bottom:20px;
+}
+
+/* INPUT AREA */
+input{
+    padding:12px;
+    width:220px;
+    text-align:center;
+    background:#0b1117;
+    border:1px solid #334455;
+    color:white;
+}
+
+button{
+    padding:12px 18px;
+    margin-left:10px;
+    background:#2d6cdf;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#4a86ff;
+}
+
+/* LOG STYLE */
+.log{
+    line-height:1.7;
+    font-size:14px;
+    color:#cfd8e3;
+}
+
+/* SECTION TITLES */
+h2{
+    margin-top:0;
+    color:#69b7ff;
+}
+
+/* ALERT STYLE */
+.red{
+    color:#ff4d4d;
+}
+
+/* small system text */
+.small{
+    font-size:13px;
+    color:#8aa0b5;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>HENPECKED JUNCTION MUNICIPAL MONITORING SYSTEM</h1>
+<p>MULLET FEST EVENT OVERSIGHT DIVISION | STATUS: ACTIVE MONITORING</p>
+</header>
+
+<div class="container">
+
+<!-- ENTRY PANEL -->
+<div class="panel">
+
+<h2>FESTIVAL RECORDS ACCESS TERMINAL</h2>
+
+<p class="small">
+Authorized personnel only. All activity during Mullet Fest is logged in real time.
+</p>
+
+<p>ENTER ACCESS CODE</p>
+
+<input id="caseNumber" placeholder="#####">
+
+<button onclick="checkAccess()">ACCESS RECORDS</button>
+
+<p class="small">
+Hint: festival incident archive access required
+</p>
+
+</div>
+
+<!-- SYSTEM LOG -->
+<div class="panel">
+
+<h2>LIVE SYSTEM ACTIVITY</h2>
+
+<div class="log">
+
+08:12 Hot dog chomp competition escalation reported<br>
+08:37 Unauthorized mullet styling booth detected<br>
+09:01 Mayor reports missing “Mullet of the Year” trophy<br>
+09:19 Portable toilet vandalism near Lot B<br>
+09:41 <span class="red">Incident report filed: deep fryer malfunction suspected</span><br>
+
+</div>
+
+</div>
+
+<!-- NOTIFICATIONS -->
+<div class="panel">
+
+<h2>EVENT NOTIFICATIONS</h2>
+
+<div class="log">
+
+• Increased festival security presence recommended<br><br>
+• Multiple residents flagged for competitive mullet disputes<br><br>
+• Food vendor containment protocols active<br><br>
+• <span class="red">One unresolved incident requires review</span>
+
+</div>
+
+</div>
+
+</div>
+
 <script>
-function checkAccess() {
-    const code = document.getElementById("caseNumber").value;
+function checkAccess(){
 
-    if (code === "79243") {
+const code = document.getElementById("caseNumber").value;
 
-        // lock screen / verifying screen
-        document.body.innerHTML = `
-            <div style="
-                background:#05070a;
-                color:#d7dde5;
-                font-family:Courier New, monospace;
-                text-align:center;
-                padding-top:140px;
-            ">
-                <h2>SYSTEM VERIFYING CODE</h2>
+if(code === "79243"){
 
-                <p>Validating credentials...</p>
+document.body.innerHTML = `
+<div style="
+    background:#05070a;
+    color:#d7dde5;
+    font-family:Courier New, monospace;
+    text-align:center;
+    padding-top:150px;
+">
+<h2>SYSTEM VERIFYING ACCESS</h2>
 
-                <br>
+<p>Validating Mullet Fest incident records...</p>
 
-                <div style="color:#69b7ff; font-size:14px;">
-                    ANALYZING DATABASE<br><br>
-                    ● ● ● SCANNING RECORDS ● ● ●<br><br>
-                    AUTHORIZATION CHECK IN PROGRESS
-                </div>
+<br>
 
-                <br><br>
+<div style="color:#69b7ff;">
+● ● ● SCANNING FESTIVAL DATABASE ● ● ●<br><br>
+CROSS-REFERENCING INCIDENT LOGS<br><br>
+AUTHORIZATION CONFIRMED
+</div>
 
-                <p style="color:#8aa0b5; font-size:13px;">
-                    Please do not close this window
-                </p>
-            </div>
-        `;
+<p style="color:#8aa0b5; margin-top:30px;">
+Redirecting to Incident Archive...
+</p>
+</div>
+`;
 
-        // delay for realism
-        setTimeout(() => {
-            window.location.href = "Case-Archive.html";
-        }, 2500);
+setTimeout(()=>{
+window.location.href = "Case-Archive.html";
+}, 2500);
 
-    } else {
+} else {
 
-        // fake denial response (more immersive than alert)
-        document.body.innerHTML = `
-            <div style="
-                background:#05070a;
-                color:#ff4d4d;
-                font-family:Courier New, monospace;
-                text-align:center;
-                padding-top:160px;
-            ">
-                <h2>ACCESS DENIED</h2>
-                <p>Unauthorized case number detected</p>
+alert("ACCESS DENIED");
+}
 
-                <br>
-
-                <div style="color:#8aa0b5; font-size:13px;">
-                    Security log updated<br>
-                    Incident recorded
-                </div>
-            </div>
-        `;
-
-        setTimeout(() => {
-            location.reload();
-        }, 2000);
-    }
 }
 </script>
+
+</body>
+</html>
