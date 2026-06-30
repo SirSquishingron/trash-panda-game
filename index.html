@@ -3,80 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mullet Fest Monitoring System</title>
+<title>Municipal Records System</title>
 
 <style>
-
-    h1 {
-    color: #ff2b2b;
-}
-
-h2 {
-    color: #ff3b3b;
-}
-
-button {
-    background: #ff2b2b;
-    color: white;
-    font-weight: bold;
-}
-
-button:hover {
-    background: #ff4d4d;
-}
-
-input {
-    border: 2px solid #ff2b2b;
-}
 body{
     margin:0;
-    background:#05070a;
+    background:#070a0f;
     color:#d7dde5;
     font-family:Courier New, monospace;
 }
 
-/* CRT scanlines */
-body::before{
-    content:"";
-    position:fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(255,0,0,0.04),
-        rgba(255,0,0,0.04) 1px,
-        transparent 2px,
-        transparent 4px
-    );
-    pointer-events:none;
-}
-
-/* HEADER (BIGGER + RED EMPHASIS) */
+/* HEADER */
 header{
-    padding:35px 20px;
-    border-bottom:2px solid #7a0000;
-    background:#0b1117;
+    background:#0d121a;
+    border-bottom:2px solid #1f2a3a;
+    padding:25px;
     text-align:center;
 }
 
 header h1{
     margin:0;
-    font-size:52px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    color:#ff2b2b;
-    text-shadow:0 0 8px rgba(255,0,0,0.4);
+    font-size:38px;
+    letter-spacing:3px;
+    color:#e2e8f0;
 }
 
 header p{
-    margin-top:10px;
-    color:#ff6b6b;
-    font-size:14px;
+    margin-top:8px;
+    color:#8aa0b5;
+    font-size:13px;
 }
 
-/* CONTAINER */
+/* LAYOUT */
 .container{
-    max-width:900px;
+    max-width:1000px;
     margin:40px auto;
     padding:20px;
 }
@@ -84,86 +44,65 @@ header p{
 /* PANELS */
 .panel{
     background:#0d141c;
-    border:1px solid #3a0000;
-    padding:25px;
+    border:1px solid #1f2a3a;
+    padding:20px;
     margin-bottom:20px;
 }
 
-/* HEADINGS (RED ACCENT) */
 h2{
     margin-top:0;
-    color:#ff3b3b;
+    color:#b9c7d6;
+    font-size:18px;
+    letter-spacing:1px;
 }
 
-/* TEXT */
 .small{
     font-size:13px;
-    color:#b0b0b0;
+    color:#8aa0b5;
 }
 
+/* LOGS */
 .log{
-    line-height:1.7;
     font-size:14px;
+    line-height:1.7;
+    color:#cfd8e3;
 }
 
-.red{
-    color:#ff2b2b;
-    font-weight:bold;
+.alert{
+    color:#ff4d4d;
 }
 
-/* INPUT AREA (MADE MORE IMPORTANT) */
-.inputWrap{
-    padding:15px;
-    border:1px solid #7a0000;
-    background:#0b1117;
-    display:inline-block;
-    margin-top:10px;
-}
-
+/* INPUT AREA */
 input{
-    padding:14px;
-    width:240px;
+    padding:12px;
+    width:220px;
     text-align:center;
     background:#0b1117;
-    border:1px solid #ff2b2b;
+    border:1px solid #2b3a4a;
     color:white;
-    font-size:16px;
 }
 
 button{
-    padding:14px 22px;
+    padding:12px 18px;
     margin-left:10px;
-    background:#ff2b2b;
+    background:#2d6cdf;
     border:none;
     color:white;
     cursor:pointer;
     font-weight:bold;
-    font-size:14px;
 }
 
 button:hover{
-    background:#ff4d4d;
-    box-shadow:0 0 10px rgba(255,0,0,0.4);
+    background:#4a86ff;
 }
 
-/* SYSTEM RESPONSE */
+/* RESPONSE */
 .response{
     margin-top:15px;
-    padding:12px;
-    border:1px solid #7a0000;
+    padding:10px;
+    border:1px solid #1f2a3a;
     background:#0b1117;
-    color:#ff6b6b;
-}
-
-/* PULSE EFFECT FOR ATTENTION */
-.pulse{
-    animation:pulse 1.8s infinite;
-}
-
-@keyframes pulse{
-    0% { box-shadow:0 0 0px rgba(255,0,0,0); }
-    50% { box-shadow:0 0 12px rgba(255,0,0,0.4); }
-    100% { box-shadow:0 0 0px rgba(255,0,0,0); }
+    color:#8aa0b5;
 }
 
 </style>
@@ -172,71 +111,81 @@ button:hover{
 <body>
 
 <header>
-<h1>HENPECKED JUNCTION MONITORING SYSTEM</h1>
-<p>MULLET FEST INCIDENT OVERSIGHT DIVISION | STATUS: HIGH ALERT</p>
+<h1>HENPECKED JUNCTION MUNICIPAL RECORDS SYSTEM</h1>
+<p>RURAL INCIDENT INVESTIGATION UNIT | ACTIVE CASE FILE: #117 (MULLET FEST)</p>
 </header>
 
 <div class="container">
 
-<!-- CONTEXT -->
+<!-- CASE SUMMARY -->
 <div class="panel">
 
-<h2>ACTIVE INCIDENT STATUS</h2>
+<h2>CASE SUMMARY</h2>
+
+<div class="log">
+Annual Mullet Fest public event has resulted in recurring incident reports.<br><br>
+
+Multiple disturbances recorded involving:
+- public disorder events<br>
+- vendor disputes<br>
+- competitive festival activities<br><br>
+
+Investigation reopened due to repeated anomaly patterns in archived records.
+</div>
+
+</div>
+
+<!-- LIVE LOG -->
+<div class="panel">
+
+<h2>LIVE INCIDENT LOG</h2>
 
 <div class="log">
 
-MULLET FEST: ONGOING<br><br>
-
-Location: Henpecked Junction<br>
-Status: <span class="red">Escalated anomaly detection</span><br><br>
-
-Primary Concern:<br>
-Case File #117 — unresolved multi-incident cluster<br><br>
-
-System Notice:<br>
-Repeated numeric sequence detected across multiple archived logs.
+08:12 Monitoring system activated<br>
+08:24 Minor public disturbance recorded<br>
+08:37 Vendor conflict escalation logged<br>
+08:52 Unauthorized activity detected in festival zone<br>
+09:01 Case File #117 reactivated<br>
+09:17 <span class="alert">Repeated numeric access pattern detected</span><br>
+09:41 System flagged potential archive breach attempt<br>
 
 </div>
 
 </div>
 
-<!-- ACCESS -->
-<div class="panel pulse">
+<!-- PERSONS OF INTEREST -->
+<div class="panel">
 
-<h2>RESTRICTED ACCESS TERMINAL</h2>
+<h2>PERSONS OF INTEREST</h2>
+
+<div class="log">
+
+SKEETER HOLLOWAY — Local mechanic, irregular nighttime activity reports<br>
+GRANDMA LOU — Vendor operator, unverified distillation claims<br>
+OFFICER DAN RILEY — Assigned case handler, documentation gaps noted<br>
+
+</div>
+
+</div>
+
+<!-- ACCESS TERMINAL -->
+<div class="panel">
+
+<h2>RESTRICTED FILE ACCESS TERMINAL</h2>
 
 <div class="small">
-Critical system integrity requires authorization validation.
+Authorization required to access Case File #117 archives.
 </div>
 
 <br>
 
-<div class="inputWrap">
 <input id="caseNumber" placeholder="ENTER ACCESS CODE">
-<button onclick="checkAccess()">AUTHENTICATE</button>
-</div>
+
+<button onclick="checkAccess()">ACCESS CASE FILE</button>
 
 <div class="response" id="responseBox">
 SYSTEM RESPONSE: Awaiting authentication...
-</div>
-
-</div>
-
-<!-- LOGS -->
-<div class="panel">
-
-<h2>LIVE SYSTEM LOGS</h2>
-
-<div class="log">
-
-08:12 Festival system initialized<br>
-08:24 Minor disturbance logged<br>
-08:37 Vendor conflict escalation detected<br>
-08:52 Unauthorized access attempt recorded<br>
-09:01 Case reference #117 resurfaced<br>
-09:17 Pattern anomaly flagged by system<br>
-09:41 <span class="red">CRITICAL: recurring numeric sequence detected</span><br>
-
 </div>
 
 </div>
@@ -250,21 +199,18 @@ const code = document.getElementById("caseNumber").value;
 const box = document.getElementById("responseBox");
 
 if(code === "79243"){
+    box.innerText = "SYSTEM RESPONSE: AUTHORIZED — ACCESS GRANTED";
 
-box.innerText = "SYSTEM RESPONSE: AUTHORIZATION CONFIRMED";
-
-setTimeout(()=>{
-window.location.href = "Case-Archive.html";
-}, 1500);
+    setTimeout(()=>{
+        window.location.href = "Case-Archive.html";
+    }, 1200);
 
 } else {
+    box.innerText = "SYSTEM RESPONSE: ACCESS DENIED";
 
-box.innerText = "SYSTEM RESPONSE: ACCESS DENIED";
-
-setTimeout(()=>{
-box.innerText = "SYSTEM RESPONSE: Awaiting authentication...";
-}, 2000);
-
+    setTimeout(()=>{
+        box.innerText = "SYSTEM RESPONSE: Awaiting authentication...";
+    }, 1800);
 }
 
 }
