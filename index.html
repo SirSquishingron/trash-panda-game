@@ -117,20 +117,23 @@ button:hover{
 
 <div class="container">
 
-<!-- CASE SUMMARY -->
+<!-- ACCESS TERMINAL (MOVED TO TOP) -->
 <div class="panel">
 
-<h2>CASE SUMMARY</h2>
+<h2>RESTRICTED FILE ACCESS TERMINAL</h2>
 
-<div class="log">
-Annual Mullet Fest public event has resulted in recurring incident reports.<br><br>
+<div class="small">
+Authorization required to access Case File #117 archives.
+</div>
 
-Multiple disturbances recorded involving:
-- public disorder events<br>
-- vendor disputes<br>
-- competitive festival activities<br><br>
+<br>
 
-Investigation reopened due to repeated anomaly patterns in archived records.
+<input id="caseNumber" placeholder="ENTER ACCESS CODE">
+
+<button onclick="checkAccess()">ACCESS CASE FILE</button>
+
+<div class="response" id="responseBox">
+SYSTEM RESPONSE: Awaiting authentication...
 </div>
 
 </div>
@@ -165,27 +168,6 @@ SKEETER HOLLOWAY — Local mechanic, irregular nighttime activity reports<br>
 GRANDMA LOU — Vendor operator, unverified distillation claims<br>
 OFFICER DAN RILEY — Assigned case handler, documentation gaps noted<br>
 
-</div>
-
-</div>
-
-<!-- ACCESS TERMINAL -->
-<div class="panel">
-
-<h2>RESTRICTED FILE ACCESS TERMINAL</h2>
-
-<div class="small">
-Authorization required to access Case File #117 archives.
-</div>
-
-<br>
-
-<input id="caseNumber" placeholder="ENTER ACCESS CODE">
-
-<button onclick="checkAccess()">ACCESS CASE FILE</button>
-
-<div class="response" id="responseBox">
-SYSTEM RESPONSE: Awaiting authentication...
 </div>
 
 </div>
