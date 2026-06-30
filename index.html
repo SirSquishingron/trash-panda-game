@@ -1,282 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Investigative Records Management System</title>
-
-<style>
-
-body{
-    margin:0;
-    background:#0b0f14;
-    color:#e4e8ed;
-    font-family:Consolas,Courier New,monospace;
-}
-
-header{
-    background:#141a22;
-    border-bottom:2px solid #2a3442;
-    padding:18px;
-}
-
-header h1{
-    margin:0;
-    font-size:26px;
-    letter-spacing:2px;
-}
-
-header p{
-    margin:6px 0 0;
-    color:#8fa8c5;
-}
-
-.container{
-    max-width:900px;
-    margin:50px auto;
-    padding:30px;
-}
-
-.panel{
-    background:#151c25;
-    border:1px solid #344150;
-    padding:30px;
-    margin-bottom:30px;
-    box-shadow:0 0 20px rgba(0,0,0,.4);
-}
-
-h2{
-    margin-top:0;
-    text-align:center;
-    letter-spacing:3px;
-}
-
-.subtitle{
-    text-align:center;
-    color:#9aa8b8;
-    margin-bottom:35px;
-}
-
-input{
-    width:220px;
-    padding:12px;
-    background:#0f141b;
-    color:white;
-    border:1px solid #4d6077;
-    font-size:18px;
-    text-align:center;
-}
-
-button{
-    padding:12px 22px;
-    margin-left:10px;
-    background:#276ef1;
-    color:white;
-    border:none;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-button:hover{
-    background:#3f83ff;
-}
-
-.login{
-    text-align:center;
-    margin:30px 0;
-}
-
-.notice{
-    font-size:14px;
-    color:#8d99a8;
-    text-align:center;
-    margin-top:15px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-}
-
-.box{
-    background:#10161d;
-    border:1px solid #303d4d;
-    padding:20px;
-}
-
-.box h3{
-    margin-top:0;
-    color:#6fb1ff;
-    border-bottom:1px solid #2d3948;
-    padding-bottom:10px;
-}
-
-.log{
-    line-height:1.8;
-}
-
-.footer{
-    text-align:center;
-    color:#7d8998;
-    font-size:13px;
-    margin-top:40px;
-    border-top:1px solid #303d4d;
-    padding-top:25px;
-}
-
-.red{
-    color:#ff5c5c;
-}
-
-.green{
-    color:#69d26f;
-}
-
-.cursor{
-    animation:blink 1s infinite;
-}
-
-@keyframes blink{
-50%{
-opacity:0;
-}
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-
-<h1>HURON COUNTY INVESTIGATIVE RECORDS MANAGEMENT SYSTEM<span class="cursor">█</span></h1>
-
-<p>
-STATUS:
-<span class="green">ONLINE</span>
-&nbsp;&nbsp;&nbsp;|
-&nbsp;&nbsp;&nbsp;
-ACCESS LEVEL:
-INVESTIGATOR
-</p>
-
-</header>
-
-<div class="container">
-
-<div class="panel">
-
-<h2>INVESTIGATIVE CASE ARCHIVE</h2>
-
-<p class="subtitle">
-RESTRICTED ACCESS<br><br>
-
-This system contains active and archived investigative records
-maintained by the Huron County Sheriff's Office.
-Access is restricted to authorized personnel.
-All activity is monitored and logged.
-</p>
-
-<div class="login">
-
-<p>ENTER CASE NUMBER</p>
-
-<input
-id="caseNumber"
-placeholder="###">
-
-<button onclick="login()">
-ACCESS RECORD
-</button>
-
-<div class="notice">
-Enter a valid case number to retrieve the associated investigative file.
-</div>
-
-</div>
-
-</div>
-
-<div class="grid">
-
-<div class="box">
-
-<h3>RECENT SYSTEM ACTIVITY</h3>
-
-<div class="log">
-
-08:42 Archive synchronization completed<br>
-
-09:01 Evidence inventory updated<br>
-
-09:18 Witness interview indexed<br>
-
-09:27 Security audit completed<br>
-
-09:41 Archived case restored<br>
-
-</div>
-
-</div>
-
-<div class="box">
-
-<h3>SYSTEM NOTIFICATIONS</h3>
-
-<div class="log">
-
-• One archived case has been flagged for review.<br><br>
-
-• Supplemental evidence has been added to an existing file.<br><br>
-
-• One document remains classified.<br><br>
-
-• <span class="red">Evidence chain verification incomplete.</span>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="footer">
-
-INVESTIGATIVE RECORDS MANAGEMENT SYSTEM
-
-<br><br>
-
-Property of the Huron County Sheriff's Office
-
-<br><br>
-
-All access attempts are logged.
-
-</div>
-
-</div>
-
 <script>
+function checkAccess() {
+    const code = document.getElementById("caseNumber").value;
 
-function login(){
+    if (code === "79243") {
 
-var code=document.getElementById("caseNumber").value;
+        // lock screen / verifying screen
+        document.body.innerHTML = `
+            <div style="
+                background:#05070a;
+                color:#d7dde5;
+                font-family:Courier New, monospace;
+                text-align:center;
+                padding-top:140px;
+            ">
+                <h2>SYSTEM VERIFYING CODE</h2>
 
-if(code=="117"){
+                <p>Validating credentials...</p>
 
-window.location.href="casefile.html";
+                <br>
 
-}else{
+                <div style="color:#69b7ff; font-size:14px;">
+                    ANALYZING DATABASE<br><br>
+                    ● ● ● SCANNING RECORDS ● ● ●<br><br>
+                    AUTHORIZATION CHECK IN PROGRESS
+                </div>
 
-alert("ACCESS DENIED\n\nInvalid Case Number.");
+                <br><br>
 
+                <p style="color:#8aa0b5; font-size:13px;">
+                    Please do not close this window
+                </p>
+            </div>
+        `;
+
+        // delay for realism
+        setTimeout(() => {
+            window.location.href = "Case-Archive.html";
+        }, 2500);
+
+    } else {
+
+        // fake denial response (more immersive than alert)
+        document.body.innerHTML = `
+            <div style="
+                background:#05070a;
+                color:#ff4d4d;
+                font-family:Courier New, monospace;
+                text-align:center;
+                padding-top:160px;
+            ">
+                <h2>ACCESS DENIED</h2>
+                <p>Unauthorized case number detected</p>
+
+                <br>
+
+                <div style="color:#8aa0b5; font-size:13px;">
+                    Security log updated<br>
+                    Incident recorded
+                </div>
+            </div>
+        `;
+
+        setTimeout(() => {
+            location.reload();
+        }, 2000);
+    }
 }
-
-}
-
 </script>
-
-</body>
-
-</html>
