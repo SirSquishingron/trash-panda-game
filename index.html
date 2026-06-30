@@ -1,255 +1,238 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; -webkit-text-stroke: #000000; min-height: 12.0px}
-    span.s1 {font-kerning: none}
-  </style>
+<meta charset="UTF-8">
+<title>Trash Panda Snack Dash</title>
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(#2c3e50, #1b2836);
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  background: linear-gradient(#34495e, #22313f);
+}
+
+#hud {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 18px;
+}
+
+#startScreen, #gameOverScreen {
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+</style>
 </head>
+
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;title&gt;Trash Panda Snack Dash&lt;/title&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;style&gt;</span></p>
-<p class="p1"><span class="s1">body {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>margin: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>overflow: hidden;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background: linear-gradient(#2c3e50, #1b2836);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>font-family: Arial, sans-serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>color: white;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>text-align: center;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">canvas {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>display: block;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>margin: 0 auto;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background: linear-gradient(#34495e, #22313f);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">#hud {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>position: absolute;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>top: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>left: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>font-size: 18px;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">#startScreen, #gameOverScreen {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>position: absolute;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>top: 35%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>text-align: center;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">button {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>padding: 10px 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>font-size: 18px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>border: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>border-radius: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>cursor: pointer;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;div id="hud"&gt;Score: 0 ❤️❤️❤️&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;div id="startScreen"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h1&gt;🦝 Trash Panda Snack Dash&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;button onclick="startGame()"&gt;Start&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;div id="gameOverScreen" style="display:none;"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Game Over 🦝&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;button onclick="startGame()"&gt;Play Again&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;canvas id="game" width="420" height="650"&gt;&lt;/canvas&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;script&gt;</span></p>
-<p class="p1"><span class="s1">const canvas = document.getElementById("game");</span></p>
-<p class="p1"><span class="s1">const ctx = canvas.getContext("2d");</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">let player, items, obstacles;</span></p>
-<p class="p1"><span class="s1">let score, lives, running;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function reset() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>player = { x: 190, y: 540, w: 40, h: 40, speed: 6 };</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>items = [];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>obstacles = [];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>score = 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>lives = 3;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>running = true;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>updateHUD();</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">document.addEventListener("keydown", e =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if (!running) return;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if (e.key === "ArrowLeft") player.x -= player.speed;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if (e.key === "ArrowRight") player.x += player.speed;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>player.x = Math.max(0, Math.min(380, player.x));</span></p>
-<p class="p1"><span class="s1">});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function updateHUD() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById("hud").innerText =</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>`Score: ${score} ❤️`.repeat(lives).replace("Score: 0 ❤️Score: 0 ❤️Score: 0 ❤️", `Score: ${score} ❤️❤️❤️`);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function spawnItem() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const types = ["trash", "food"];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const type = types[Math.floor(Math.random() * types.length)];</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>items.push({</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>x: Math.random() * 380,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>y: -20,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>w: 22,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>h: 22,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>speed: 2.2,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>type</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function spawnObstacle() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>obstacles.push({</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>x: Math.random() * 380,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>y: -20,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>w: 35,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>h: 35,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>speed: 2.6</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function collision(a, b) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return (</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>a.x &lt; b.x + b.w &amp;&amp;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>a.x + a.w &gt; b.x &amp;&amp;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>a.y &lt; b.y + b.h &amp;&amp;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>a.y + a.h &gt; b.y</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function playNom() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const AudioCtx = window.AudioContext || window.webkitAudioContext;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const audio = new AudioCtx();</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const osc = audio.createOscillator();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const gain = audio.createGain();</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>osc.type = "triangle";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>osc.frequency.value = 300;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>gain.gain.value = 0.08;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>osc.connect(gain);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>gain.connect(audio.destination);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>osc.start();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>osc.stop(audio.currentTime + 0.12);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function update() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if (!running) return;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// move objects</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>items.forEach(i =&gt; i.y += i.speed);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>obstacles.forEach(o =&gt; o.y += o.speed);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// collect items</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>items.forEach((i, index) =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (collision(player, i)) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>score += (i.type === "food") ? 2 : 1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>playNom();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>items.splice(index, 1);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>updateHUD();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// obstacles</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>obstacles.forEach(o =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (collision(player, o)) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>lives--;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>obstacles.splice(obstacles.indexOf(o), 1);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (lives &lt;= 0) endGame();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>updateHUD();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>items = items.filter(i =&gt; i.y &lt; 700);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>obstacles = obstacles.filter(o =&gt; o.y &lt; 700);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if (Math.random() &lt; 0.03) spawnItem();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if (Math.random() &lt; 0.02) spawnObstacle();</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function drawRaccoon() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// body</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle = "#7f8c8d";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillRect(player.x, player.y, player.w, player.h);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// mask</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle = "#2c3e50";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillRect(player.x + 6, player.y + 10, 10, 8);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillRect(player.x + 24, player.y + 10, 10, 8);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// eyes glow</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle = "white";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillRect(player.x + 10, player.y + 12, 3, 3);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillRect(player.x + 27, player.y + 12, 3, 3);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function drawItems() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>items.forEach(i =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.fillStyle = i.type === "food" ? "#f1c40f" : "#27ae60";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.fillRect(i.x, i.y, i.w, i.h);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function drawObstacles() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle = "#e74c3c";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>obstacles.forEach(o =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.fillRect(o.x, o.y, o.w, o.h);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function draw() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.clearRect(0, 0, canvas.width, canvas.height);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>drawRaccoon();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>drawItems();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>drawObstacles();</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function loop() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>update();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>draw();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>requestAnimationFrame(loop);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function startGame() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById("startScreen").style.display = "none";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById("gameOverScreen").style.display = "none";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>reset();</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function endGame() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>running = false;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById("gameOverScreen").style.display = "block";</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">loop();</span></p>
-<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+
+<div id="hud">Score: 0 ❤️❤️❤️</div>
+
+<div id="startScreen">
+  <h1>🦝 Trash Panda Snack Dash</h1>
+  <button onclick="startGame()">Start</button>
+</div>
+
+<div id="gameOverScreen" style="display:none;">
+  <h1>Game Over 🦝</h1>
+  <button onclick="startGame()">Play Again</button>
+</div>
+
+<canvas id="game" width="420" height="650"></canvas>
+
+<script>
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+let player, items, obstacles;
+let score, lives, running;
+
+function reset() {
+  player = { x: 190, y: 540, w: 40, h: 40, speed: 6 };
+  items = [];
+  obstacles = [];
+  score = 0;
+  lives = 3;
+  running = true;
+  updateHUD();
+}
+
+document.addEventListener("keydown", e => {
+  if (!running) return;
+  if (e.key === "ArrowLeft") player.x -= player.speed;
+  if (e.key === "ArrowRight") player.x += player.speed;
+
+  player.x = Math.max(0, Math.min(380, player.x));
+});
+
+function updateHUD() {
+  document.getElementById("hud").innerText =
+    `Score: ${score} ❤️`.repeat(lives).replace("Score: 0 ❤️Score: 0 ❤️Score: 0 ❤️", `Score: ${score} ❤️❤️❤️`);
+}
+
+function spawnItem() {
+  const types = ["trash", "food"];
+  const type = types[Math.floor(Math.random() * types.length)];
+
+  items.push({
+    x: Math.random() * 380,
+    y: -20,
+    w: 22,
+    h: 22,
+    speed: 2.2,
+    type
+  });
+}
+
+function spawnObstacle() {
+  obstacles.push({
+    x: Math.random() * 380,
+    y: -20,
+    w: 35,
+    h: 35,
+    speed: 2.6
+  });
+}
+
+function collision(a, b) {
+  return (
+    a.x < b.x + b.w &&
+    a.x + a.w > b.x &&
+    a.y < b.y + b.h &&
+    a.y + a.h > b.y
+  );
+}
+
+function playNom() {
+  const AudioCtx = window.AudioContext || window.webkitAudioContext;
+  const audio = new AudioCtx();
+
+  const osc = audio.createOscillator();
+  const gain = audio.createGain();
+
+  osc.type = "triangle";
+  osc.frequency.value = 300;
+
+  gain.gain.value = 0.08;
+
+  osc.connect(gain);
+  gain.connect(audio.destination);
+
+  osc.start();
+  osc.stop(audio.currentTime + 0.12);
+}
+
+function update() {
+  if (!running) return;
+
+  // move objects
+  items.forEach(i => i.y += i.speed);
+  obstacles.forEach(o => o.y += o.speed);
+
+  // collect items
+  items.forEach((i, index) => {
+    if (collision(player, i)) {
+      score += (i.type === "food") ? 2 : 1;
+      playNom();
+      items.splice(index, 1);
+      updateHUD();
+    }
+  });
+
+  // obstacles
+  obstacles.forEach(o => {
+    if (collision(player, o)) {
+      lives--;
+      obstacles.splice(obstacles.indexOf(o), 1);
+
+      if (lives <= 0) endGame();
+      updateHUD();
+    }
+  });
+
+  items = items.filter(i => i.y < 700);
+  obstacles = obstacles.filter(o => o.y < 700);
+
+  if (Math.random() < 0.03) spawnItem();
+  if (Math.random() < 0.02) spawnObstacle();
+}
+
+function drawRaccoon() {
+  // body
+  ctx.fillStyle = "#7f8c8d";
+  ctx.fillRect(player.x, player.y, player.w, player.h);
+
+  // mask
+  ctx.fillStyle = "#2c3e50";
+  ctx.fillRect(player.x + 6, player.y + 10, 10, 8);
+  ctx.fillRect(player.x + 24, player.y + 10, 10, 8);
+
+  // eyes glow
+  ctx.fillStyle = "white";
+  ctx.fillRect(player.x + 10, player.y + 12, 3, 3);
+  ctx.fillRect(player.x + 27, player.y + 12, 3, 3);
+}
+
+function drawItems() {
+  items.forEach(i => {
+    ctx.fillStyle = i.type === "food" ? "#f1c40f" : "#27ae60";
+    ctx.fillRect(i.x, i.y, i.w, i.h);
+  });
+}
+
+function drawObstacles() {
+  ctx.fillStyle = "#e74c3c";
+  obstacles.forEach(o => {
+    ctx.fillRect(o.x, o.y, o.w, o.h);
+  });
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawRaccoon();
+  drawItems();
+  drawObstacles();
+}
+
+function loop() {
+  update();
+  draw();
+  requestAnimationFrame(loop);
+}
+
+function startGame() {
+  document.getElementById("startScreen").style.display = "none";
+  document.getElementById("gameOverScreen").style.display = "none";
+  reset();
+}
+
+function endGame() {
+  running = false;
+  document.getElementById("gameOverScreen").style.display = "block";
+}
+
+loop();
+</script>
+
 </body>
 </html>
