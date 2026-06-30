@@ -296,6 +296,34 @@ function updateHUD(){
   document.getElementById("hud").innerText="Score: "+score;
 }
 
+let bootLines = [
+  "Loading trailer park grid...",
+  "Syncing municipal incident database...",
+  "Calibrating raccoon threat index...",
+  "Importing beer distribution data...",
+  "WARNING: unstable wildlife detected...",
+  "System ready."
+];
+
+let bootIndex = 0;
+
+function runBootSequence() {
+  const text = document.getElementById("bootText");
+  const btn = document.getElementById("startBtn");
+
+  let interval = setInterval(() => {
+
+    if (bootIndex < bootLines.length) {
+      text.innerHTML += bootLines[bootIndex] + "<br>";
+      bootIndex++;
+    } else {
+      clearInterval(interval);
+      btn.style.display = "inline-block";
+      text.innerHTML += "<br><span style='color:#4ade80;'>SYSTEM READY</span>";
+    }
+
+  }, 700);
+}  
 function startGame(){
   document.getElementById("startScreen").style.display="none";
   running=true;
