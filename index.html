@@ -160,16 +160,6 @@ SYSTEM RESPONSE: Awaiting authentication...
 <!-- PERSONS OF INTEREST -->
 <div class="panel">
 
-<h2>PERSONS OF INTEREST</h2>
-
-<div class="log">
-
-SKEETER HOLLOWAY — Local mechanic, irregular nighttime activity reports<br>
-GRANDMA LOU — Vendor operator, unverified distillation claims<br>
-OFFICER DAN RILEY — Assigned case handler, documentation gaps noted<br>
-
-</div>
-
 </div>
 
 </div>
@@ -177,22 +167,23 @@ OFFICER DAN RILEY — Assigned case handler, documentation gaps noted<br>
 <script>
 function checkAccess(){
 
-const code = document.getElementById("caseNumber").value;
-const box = document.getElementById("responseBox");
+    const code = document.getElementById("caseNumber").value.trim();
+    const box = document.getElementById("responseBox");
 
-if(code === "79243"){
-    box.innerText = "SYSTEM RESPONSE: AUTHORIZED — ACCESS GRANTED";
+    if(code === "79243"){
+        box.innerText = "SYSTEM RESPONSE: AUTHORIZED — ACCESS GRANTED";
 
-    setTimeout(()=>{
-        window.location.href = "https://sites.google.com/view/hicksville-county-sheriff/case-archive?authuser=0";
-  } else {
-    box.innerText = "SYSTEM RESPONSE: ACCESS DENIED";
+        setTimeout(() => {
+            window.location.href = "https://sites.google.com/view/hicksville-county-sheriff/case-archive?authuser=0";
+        }, 1200);
 
-    setTimeout(()=>{
-        box.innerText = "SYSTEM RESPONSE: Awaiting authentication...";
-    }, 1800);
-}
+    } else {
+        box.innerText = "SYSTEM RESPONSE: ACCESS DENIED";
 
+        setTimeout(() => {
+            box.innerText = "SYSTEM RESPONSE: Awaiting authentication...";
+        }, 1800);
+    }
 }
 </script>
 
